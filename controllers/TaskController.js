@@ -25,6 +25,7 @@ const setTask = async (req, res) => {
 }
 
 const deleteTask = async (req, res) => {
+    
     try {
         const taskId = req.params.id;
         const task = taskSchema.findById(taskId);
@@ -35,6 +36,7 @@ const deleteTask = async (req, res) => {
             res.status(404).json({ msg: "Task not found..!" })
         }
     } catch (error) {
+        console.log("delet method")
         res.status(500).json({ msg: error })
     }
 }
